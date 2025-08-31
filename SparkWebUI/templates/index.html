@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache Spark - Lightning-Fast Unified Analytics Engine</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="{{ url_for('static', filename='images/spark-logo.svg') }}" alt="Apache Spark" width="40" height="40" class="me-2">
+                <span class="fw-bold">Apache Spark</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#performance">Performance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#core">Core</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#components">Components</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#use-cases">Use Cases</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-particles"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="hero-title">
+                        <span class="text-gradient">Apache Spark</span><br>
+                        Lightning-Fast Analytics Engine
+                    </h1>
+                    <p class="hero-subtitle">
+                        Unified analytics engine designed for large-scale data processing. 
+                        Performing computations up to 100x faster in memory compared to traditional systems.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-rocket me-2"></i>Explore Features
+                        </a>
+                        <a href="#components" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-cogs me-2"></i>Components
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="hero-visual">
+                        <div class="floating-card" data-aos="float" data-aos-duration="3000" data-aos-delay="400">
+                            <i class="fas fa-bolt spark-icon"></i>
+                            <h4>100x Faster</h4>
+                            <p>In-memory processing</p>
+                        </div>
+                        <div class="floating-card" data-aos="float" data-aos-duration="3000" data-aos-delay="600">
+                            <i class="fas fa-database spark-icon"></i>
+                            <h4>Multi-Language</h4>
+                            <p>Python, Scala, Java, R</p>
+                        </div>
+                        <div class="floating-card" data-aos="float" data-aos-duration="3000" data-aos-delay="800">
+                            <i class="fas fa-stream spark-icon"></i>
+                            <h4>Real-time</h4>
+                            <p>Stream processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1500">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">About Apache Spark</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        The story behind the revolutionary analytics engine
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Introduction Content -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <div class="intro-content">
+                        <p class="lead text-center mb-4">
+                            Apache Spark is a lightning-fast unified analytics engine designed for large-scale data 
+                            processing. Originally developed at UC Berkeley's AMPLab in 2009, it has evolved into one 
+                            of the most active open-source projects in data science.
+                        </p>
+                        <div class="stats-row">
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="stat-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h4 class="text-gradient">100x</h4>
+                                <p>Faster than Hadoop</p>
+                            </div>
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="stat-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h4 class="text-gradient">4+</h4>
+                                <p>Programming Languages</p>
+                            </div>
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="stat-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h4 class="text-gradient">1000+</h4>
+                                <p>Companies Using Spark</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="about-content">
+                        <h3 class="mb-4">History and Evolution</h3>
+                        <div class="timeline">
+                            <div class="timeline-item" data-aos="slide-right" data-aos-delay="200">
+                                <div class="timeline-year">2009</div>
+                                <div class="timeline-content">
+                                    <h5>UC Berkeley's AMPLab</h5>
+                                    <p>Created to overcome Hadoop MapReduce limitations for iterative and interactive workloads. The goal was to make cluster computing more efficient for machine learning and interactive analytics.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="slide-right" data-aos-delay="300">
+                                <div class="timeline-year">2010</div>
+                                <div class="timeline-content">
+                                    <h5>Open Source Release</h5>
+                                    <p>Released as open-source under BSD license, making it available to the global developer community and sparking rapid adoption.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="slide-right" data-aos-delay="400">
+                                <div class="timeline-year">2013</div>
+                                <div class="timeline-content">
+                                    <h5>Apache Foundation</h5>
+                                    <p>Donated to Apache Software Foundation as top-level project, ensuring long-term governance and community-driven development.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="slide-right" data-aos-delay="500">
+                                <div class="timeline-year">Present</div>
+                                <div class="timeline-content">
+                                    <h5>Global Adoption</h5>
+                                    <p>Now used by thousands of organizations worldwide for big data processing, machine learning, and real-time analytics at scale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="features-grid">
+                        <div class="feature-card interactive-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h5>Batch Processing</h5>
+                            <p>Efficient handling of large-scale data transformations with in-memory computing capabilities that dramatically reduce I/O operations.</p>
+                            <div class="feature-details">
+                                <span class="badge">ETL Pipelines</span>
+                                <span class="badge">Data Warehousing</span>
+                            </div>
+                        </div>
+                        <div class="feature-card interactive-card" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="fas fa-stream"></i>
+                            </div>
+                            <h5>Stream Processing</h5>
+                            <p>Real-time data analysis through micro-batching with fault-tolerant processing of live data streams from multiple sources.</p>
+                            <div class="feature-details">
+                                <span class="badge">Real-time Analytics</span>
+                                <span class="badge">IoT Processing</span>
+                            </div>
+                        </div>
+                        <div class="feature-card interactive-card" data-aos="zoom-in" data-aos-delay="500">
+                            <div class="feature-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h5>Graph Processing</h5>
+                            <p>Support for graph algorithms via GraphX library, enabling analysis of relationships and connections in large networks.</p>
+                            <div class="feature-details">
+                                <span class="badge">Social Networks</span>
+                                <span class="badge">Fraud Detection</span>
+                            </div>
+                        </div>
+                        <div class="feature-card interactive-card" data-aos="zoom-in" data-aos-delay="600">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h5>Interactive Processing</h5>
+                            <p>Fast queries and data exploration for interactive workloads with sub-second response times for exploratory analytics.</p>
+                            <div class="feature-details">
+                                <span class="badge">Data Exploration</span>
+                                <span class="badge">Ad-hoc Queries</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section id="performance" class="py-5 section-padding bg-performance">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title text-white" data-aos="fade-up">Performance & Scalability</h2>
+                    <p class="section-subtitle text-light" data-aos="fade-up" data-aos-delay="100">
+                        Unmatched speed and efficiency for big data processing
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="performance-card">
+                        <div class="performance-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <h4>In-Memory Computing</h4>
+                        <p class="text-light">Spark can cache datasets in memory across operations, resulting in 10-100x faster performance for iterative algorithms compared to disk-based systems.</p>
+                        <div class="performance-metric">
+                            <div class="metric-bar" data-percentage="100">
+                                <div class="metric-fill"></div>
+                            </div>
+                            <span class="metric-label">100x Faster</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="performance-card">
+                        <div class="performance-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Cluster Scalability</h4>
+                        <p class="text-light">Horizontal scaling from single machines to thousands of nodes, processing petabytes of data with automatic load balancing and fault tolerance.</p>
+                        <div class="performance-metric">
+                            <div class="metric-bar" data-percentage="80">
+                                <div class="metric-fill"></div>
+                            </div>
+                            <span class="metric-label">1000+ Nodes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="performance-card">
+                        <div class="performance-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <h4>Low Latency</h4>
+                        <p class="text-light">Sub-second query response times for interactive analytics and real-time processing with optimized execution engine and query planning.</p>
+                        <div class="performance-metric">
+                            <div class="metric-bar" data-percentage="95">
+                                <div class="metric-fill"></div>
+                            </div>
+                            <span class="metric-label">&lt;1 Second</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spark Core Section -->
+    <section id="core" class="py-5 section-padding bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title text-white" data-aos="fade-up">Spark Core</h2>
+                    <p class="section-subtitle text-light" data-aos="fade-up" data-aos-delay="100">
+                        The foundation of the Spark ecosystem
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Core Architecture Overview -->
+            <div class="row mb-5">
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="architecture-overview">
+                        <h3 class="text-white text-center mb-4">Spark Core Architecture</h3>
+                        <div class="architecture-diagram">
+                            <div class="arch-component driver-program" data-aos="zoom-in" data-aos-delay="300">
+                                <i class="fas fa-laptop-code"></i>
+                                <h5>Driver Program</h5>
+                                <p>SparkContext, Task Scheduling</p>
+                            </div>
+                            <div class="arch-component cluster-manager" data-aos="zoom-in" data-aos-delay="400">
+                                <i class="fas fa-server"></i>
+                                <h5>Cluster Manager</h5>
+                                <p>Resource Allocation</p>
+                            </div>
+                            <div class="arch-component worker-nodes" data-aos="zoom-in" data-aos-delay="500">
+                                <i class="fas fa-cubes"></i>
+                                <h5>Worker Nodes</h5>
+                                <p>Executor Processes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="core-visual">
+                        <div class="rdd-diagram">
+                            <div class="rdd-layer" data-aos="slide-up" data-aos-delay="200">
+                                <h5>Transformations</h5>
+                                <p class="rdd-description">Lazy operations that create new RDDs</p>
+                                <div class="rdd-operations">
+                                    <span class="operation interactive-op">map</span>
+                                    <span class="operation interactive-op">filter</span>
+                                    <span class="operation interactive-op">reduceByKey</span>
+                                    <span class="operation interactive-op">groupBy</span>
+                                    <span class="operation interactive-op">join</span>
+                                    <span class="operation interactive-op">distinct</span>
+                                </div>
+                            </div>
+                            <div class="rdd-layer" data-aos="slide-up" data-aos-delay="400">
+                                <h5>Actions</h5>
+                                <p class="rdd-description">Trigger execution and return results</p>
+                                <div class="rdd-operations">
+                                    <span class="operation interactive-op">collect</span>
+                                    <span class="operation interactive-op">count</span>
+                                    <span class="operation interactive-op">save</span>
+                                    <span class="operation interactive-op">take</span>
+                                    <span class="operation interactive-op">reduce</span>
+                                    <span class="operation interactive-op">foreach</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="core-content text-white">
+                        <h3 class="mb-4">Resilient Distributed Datasets (RDDs)</h3>
+                        <p class="mb-4">
+                            At the heart of Spark Core is the concept of Resilient Distributed Datasets. 
+                            RDDs are immutable, distributed collections of objects that can be processed in parallel.
+                            They provide fault tolerance through lineage tracking and enable efficient in-memory computation.
+                        </p>
+                        
+                        <div class="rdd-properties mb-4">
+                            <div class="property-item" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fas fa-lock"></i>
+                                <strong>Immutable:</strong> Once created, RDDs cannot be changed
+                            </div>
+                            <div class="property-item" data-aos="fade-up" data-aos-delay="400">
+                                <i class="fas fa-sitemap"></i>
+                                <strong>Distributed:</strong> Data is partitioned across cluster nodes
+                            </div>
+                            <div class="property-item" data-aos="fade-up" data-aos-delay="500">
+                                <i class="fas fa-redo"></i>
+                                <strong>Resilient:</strong> Automatic fault recovery through lineage
+                            </div>
+                        </div>
+                        
+                        <div class="core-features">
+                            <div class="core-feature" data-aos="fade-up" data-aos-delay="600">
+                                <i class="fas fa-memory"></i>
+                                <div>
+                                    <h5>In-memory Computing</h5>
+                                    <p>Cache frequently accessed data in memory to speed up iterative algorithms by 10-100x</p>
+                                </div>
+                            </div>
+                            <div class="core-feature" data-aos="fade-up" data-aos-delay="700">
+                                <i class="fas fa-tasks"></i>
+                                <div>
+                                    <h5>Task Scheduling</h5>
+                                    <p>Intelligent task distribution and data locality optimization across cluster nodes</p>
+                                </div>
+                            </div>
+                            <div class="core-feature" data-aos="fade-up" data-aos-delay="800">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <h5>Fault Tolerance</h5>
+                                    <p>Automatic recovery from node failures using RDD lineage information without data replication</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section id="code-examples" class="py-5 section-padding">
+        <!-- 3D Background Layers -->
+        <div class="code-examples-bg-layer bg-layer-1"></div>
+        <div class="code-examples-bg-layer bg-layer-2"></div>
+        <div class="code-examples-bg-layer bg-layer-3"></div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Code Examples</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        See Apache Spark in action with real-world examples
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 3D Floating Elements -->
+            <div class="code-3d-element" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+            <div class="code-3d-element cube" style="top: 20%; right: 10%; animation-delay: 2s;"></div>
+            <div class="code-3d-element triangle" style="top: 60%; left: 8%; animation-delay: 4s;"></div>
+            <div class="code-3d-element" style="top: 80%; right: 15%; animation-delay: 1s;"></div>
+            <div class="code-3d-element cube" style="top: 40%; left: 90%; animation-delay: 3s;"></div>
+            
+            <div class="row code-3d-container">
+                <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="200">
+                    <div class="code-example-card">
+                        <div class="code-header">
+                            <i class="fab fa-python"></i>
+                            <h4>Python - Word Count</h4>
+                            <span class="language-badge python">Python</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-python"># Load text file and count words
+from pyspark import SparkContext
+
+sc = SparkContext()
+text_file = sc.textFile("hdfs://data.txt")
+
+# Split lines into words and count
+word_counts = text_file \
+    .flatMap(lambda line: line.split(" ")) \
+    .map(lambda word: (word, 1)) \
+    .reduceByKey(lambda a, b: a + b)
+
+# Collect results
+results = word_counts.collect()
+print(results)</code></pre>
+                        </div>
+                        <div class="code-footer">
+                            <span class="performance-note">
+                                <i class="fas fa-rocket"></i>
+                                Processes millions of words in seconds
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-left" data-aos-delay="300">
+                    <div class="code-example-card">
+                        <div class="code-header">
+                            <i class="fas fa-database"></i>
+                            <h4>Scala - SQL Query</h4>
+                            <span class="language-badge scala">Scala</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-scala">import org.apache.spark.sql.SparkSession
+
+val spark = SparkSession.builder()
+  .appName("Customer Analysis")
+  .getOrCreate()
+
+// Load JSON data
+val customers = spark.read.json("customers.json")
+customers.createOrReplaceTempView("customers")
+
+// SQL query
+val result = spark.sql("""
+  SELECT region, AVG(purchase_amount) as avg_purchase
+  FROM customers 
+  WHERE age > 25 
+  GROUP BY region 
+  ORDER BY avg_purchase DESC
+""")
+
+result.show()</code></pre>
+                        </div>
+                        <div class="code-footer">
+                            <span class="performance-note">
+                                <i class="fas fa-chart-bar"></i>
+                                Catalyst optimizer for performance
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="400">
+                    <div class="code-example-card">
+                        <div class="code-header">
+                            <i class="fas fa-stream"></i>
+                            <h4>Stream Processing</h4>
+                            <span class="language-badge java">Java</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-java">// Real-time stream processing
+StreamingContext ssc = new StreamingContext(conf, Durations.seconds(1));
+
+// Create DStream from socket
+JavaReceiverInputDStream<String> lines = 
+    ssc.socketTextStream("localhost", 9999);
+
+// Process streams
+JavaDStream<String> words = lines.flatMap(
+    x -> Arrays.asList(x.split(" ")).iterator()
+);
+
+JavaPairDStream<String, Integer> pairs = words.mapToPair(
+    s -> new Tuple2<>(s, 1)
+);
+
+JavaPairDStream<String, Integer> wordCounts = 
+    pairs.reduceByKey((i1, i2) -> i1 + i2);
+
+wordCounts.print();
+ssc.start();</code></pre>
+                        </div>
+                        <div class="code-footer">
+                            <span class="performance-note">
+                                <i class="fas fa-clock"></i>
+                                Real-time processing with micro-batches
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-left" data-aos-delay="500">
+                    <div class="code-example-card">
+                        <div class="code-header">
+                            <i class="fas fa-brain"></i>
+                            <h4>Machine Learning</h4>
+                            <span class="language-badge python">Python</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-python"># MLlib example - Linear Regression
+from pyspark.ml.regression import LinearRegression
+from pyspark.ml.feature import VectorAssembler
+
+# Load data
+df = spark.read.csv("housing_data.csv", header=True, inferSchema=True)
+
+# Prepare features
+assembler = VectorAssembler(
+    inputCols=["bedrooms", "bathrooms", "sqft"],
+    outputCol="features"
+)
+feature_df = assembler.transform(df)
+
+# Train model
+lr = LinearRegression(featuresCol="features", labelCol="price")
+model = lr.fit(feature_df)
+
+# Make predictions
+predictions = model.transform(feature_df)
+predictions.select("features", "price", "prediction").show()</code></pre>
+                        </div>
+                        <div class="code-footer">
+                            <span class="performance-note">
+                                <i class="fas fa-chart-line"></i>
+                                Distributed ML algorithms
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="py-5 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Spark Components</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        A comprehensive ecosystem for diverse workloads
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Spark SQL -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="component-card">
+                        <div class="component-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Spark SQL</h4>
+                        <p>Structured data processing with SQL queries and DataFrames. Features the Catalyst optimizer for maximum efficiency.</p>
+                        <ul class="component-features">
+                            <li><i class="fas fa-check"></i> DataFrame abstraction</li>
+                            <li><i class="fas fa-check"></i> Catalyst query optimizer</li>
+                            <li><i class="fas fa-check"></i> Multiple data source integration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Spark Streaming -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="component-card">
+                        <div class="component-icon">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <h4>Spark Streaming</h4>
+                        <p>Real-time data processing using micro-batching. Scalable and fault-tolerant stream processing.</p>
+                        <ul class="component-features">
+                            <li><i class="fas fa-check"></i> Micro-batching technique</li>
+                            <li><i class="fas fa-check"></i> Real-time dashboards</li>
+                            <li><i class="fas fa-check"></i> Monitoring systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- MLlib -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="component-card">
+                        <div class="component-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>MLlib</h4>
+                        <p>Machine learning library for scalable distributed learning on large datasets.</p>
+                        <ul class="component-features">
+                            <li><i class="fas fa-check"></i> Classification & Regression</li>
+                            <li><i class="fas fa-check"></i> Clustering algorithms</li>
+                            <li><i class="fas fa-check"></i> Collaborative filtering</li>
+                            <li><i class="fas fa-check"></i> ML pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- GraphX -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="component-card">
+                        <div class="component-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4>GraphX</h4>
+                        <p>Graph computation framework with vertex-cut partitioning and edge-centric computation.</p>
+                        <ul class="component-features">
+                            <li><i class="fas fa-check"></i> Google's Pregel API</li>
+                            <li><i class="fas fa-check"></i> PageRank algorithm</li>
+                            <li><i class="fas fa-check"></i> Connected components</li>
+                            <li><i class="fas fa-check"></i> Shortest paths</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ML Algorithms Section -->
+    <section id="ml-algorithms" class="py-5 section-padding bg-gradient">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title text-white" data-aos="fade-up">Machine Learning Algorithms</h2>
+                    <p class="section-subtitle text-black" data-aos="fade-up" data-aos-delay="100" style="color: #000 !important; text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6); font-weight: 600;">
+                        MLlib provides comprehensive ML capabilities
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="ml-card">
+                        <i class="fas fa-tags"></i>
+                        <h5>Classification</h5>
+                        <p>Predict categories or labels</p>
+                        <div class="ml-examples">
+                            <span>Logistic Regression</span>
+                            <span>Decision Trees</span>
+                            <span>Random Forests</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="ml-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h5>Regression</h5>
+                        <p>Predict continuous values</p>
+                        <div class="ml-examples">
+                            <span>Linear Regression</span>
+                            <span>Tree Regression</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="ml-card">
+                        <i class="fas fa-object-group"></i>
+                        <h5>Clustering</h5>
+                        <p>Group data into clusters</p>
+                        <div class="ml-examples">
+                            <span>K-means</span>
+                            <span>Customer Segmentation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="ml-card">
+                        <i class="fas fa-thumbs-up"></i>
+                        <h5>Collaborative Filtering</h5>
+                        <p>Recommendation systems</p>
+                        <div class="ml-examples">
+                            <span>ALS Algorithm</span>
+                            <span>Movie Recommendations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="py-5 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Real-World Use Cases</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Apache Spark powering modern data-driven applications
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h4>ETL Pipelines</h4>
+                        <p>Modeling dependencies and transformations for data lineage tracking in complex data workflows.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Log Analysis</h4>
+                        <p>Converting system logs into graph structures to detect anomalies and trace event flows.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>ML Workflows</h4>
+                        <p>Feature extraction, fraud detection, recommendation engines, and knowledge graphs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion" class="py-5 section-padding bg-dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="800">
+                    <h2 class="text-white mb-4">The Future of Big Data</h2>
+                    <p class="text-light mb-4">
+                        Apache Spark is more than a data processing tool; it is a comprehensive analytics engine. 
+                        Its combination of speed, scalability, and versatility allows it to support diverse workloads 
+                        such as batch processing, streaming analytics, machine learning, and graph computation.
+                    </p>
+                    <p class="text-light">
+                        This makes Spark a cornerstone of modern big data and data science ecosystems, 
+                        enabling organizations to process and analyze data at unprecedented scale and speed.
+                    </p>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="conclusion-stats">
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="text-gradient">100x</h3>
+                            <p class="text-light">Faster Processing</p>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="text-gradient">4+</h3>
+                            <p class="text-light">Programming Languages</p>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="text-gradient">∞</h3>
+                            <p class="text-light">Possibilities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="footer-brand d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='images/spark-logo.svg') }}" alt="Apache Spark" width="30" height="30" class="me-2">
+                        <span class="text-white fw-bold">Apache Spark</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <p class="text-light mb-0">Created by <span class="text-gradient fw-bold">Nitish.M</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
